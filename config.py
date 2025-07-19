@@ -134,7 +134,7 @@ layouts = [
         border_normal="#1e1e2e",
         border_width=2,
         margin=8,
-        margin_on_single=-8,
+        margin_on_single=0,
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
