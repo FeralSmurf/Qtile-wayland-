@@ -2,6 +2,8 @@ from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+from libqtile.backend.wayland import InputConfig
+
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -191,7 +193,7 @@ screens = [
                 widget.TextBox(fmt=" "),
                 widget.Battery(
                     format="{char} {percent:2.0%} {hour:d}:{min:02d}",
-                    fmt=" {}",
+                    fmt=" {}",
                     foreground="#7f849c",
                 ),
                 widget.TextBox(fmt=" "),
@@ -205,7 +207,7 @@ screens = [
                 ),
                 widget.TextBox(fmt=" "),
                 widget.Volume(
-                    fmt=" {} ",
+                    fmt=" {}",
                     foreground="#7f849c",
                 ),
                 widget.TextBox(fmt=" "),
@@ -272,7 +274,12 @@ reconfigure_screens = True
 auto_minimize = True
 
 # When using the Wayland backend, this can be used to configure input devices.
-wl_input_rules = None
+wl_input_rules = {
+    "type:keyboard": InputConfig(
+        kb_layout="us,us,ro", kb_variant=",intl,std", kb_options="grp:alt_shift_toggle"
+    ),
+}
+# Add more rules for other devices or configurations as needed
 
 # xcursor theme (string or None) and size (integer) for Wayland backend
 wl_xcursor_theme = None
