@@ -75,7 +75,7 @@ keys = [
     Key(
         [mod],
         "r",
-        lazy.spawncmd("rofi -show drun"),
+        lazy.spawncmd("wofi -show drun"),
         desc="Spawn a command using a prompt widget",
     ),
 ]
@@ -118,7 +118,7 @@ for i in groups:
 
 groups = [
     Group("1", spawn=["alacritty"], label=" "),
-    Group("2", spawn=["qutebrowser"], label=" "),
+    Group("2", spawn=["qutebrowser"], label=""),
     Group(
         "3",
         label=" ",
@@ -153,7 +153,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="DejaVuSansM Nerd Font, FontAwesome",
+    font="DejaVuSansM Nerd Font, FontAwesome, SemiBold",
     fontsize=16,
     padding=2,
 )
@@ -166,6 +166,8 @@ screens = [
                 widget.GroupBox(
                     active="#7f849c",
                     this_current_screen_border="#7f849c",
+                    padding=4,
+                    margin_x=4,
                 ),
                 widget.Prompt(),
                 widget.Spacer(
@@ -193,7 +195,7 @@ screens = [
                 widget.TextBox(fmt=" "),
                 widget.Battery(
                     format="{char} {percent:2.0%} {hour:d}:{min:02d}",
-                    fmt=" {}",
+                    fmt=" {}h",
                     foreground="#7f849c",
                 ),
                 widget.TextBox(fmt=" "),
@@ -217,11 +219,10 @@ screens = [
                     foreground="#7f849c",
                 ),
             ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            30,
             background="#1e1e2e",
             foreground="#7f849c",
+            margin=[0, 0, 0, 0],  # [top, right, bottom, left] margin
         ),
         # Set static wallpaper
         wallpaper="~/Downloads/Wallpapers/darkwinter.jpg",
