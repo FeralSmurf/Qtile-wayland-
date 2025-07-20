@@ -16,6 +16,25 @@ keys = [
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%")),
     # Decrease brightness
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
+    # Volume keys
+    Key(
+        [],
+        "XF86AudioLowerVolume",
+        lazy.spawn("amixer -q sset Master 5%-"),
+        desc="Lower Volume by 5%",
+    ),
+    Key(
+        [],
+        "XF86AudioRaiseVolume",
+        lazy.spawn("amixer -q sset Master 5%+"),
+        desc="Raise Volume by 5%",
+    ),
+    Key(
+        [],
+        "XF86AudioMute",
+        lazy.spawn("amixer -q sset Master toggle"),
+        desc="Mute Volume",
+    ),
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
