@@ -95,11 +95,13 @@ keys = [
         lazy.spawn("rofi -show drun"),
         desc="Spawn a command using a prompt widget",
     ),
+    # screenshots
     Key(
         [mod],
-        "d",
-        lazy.spawn("wofi --show drun"),
-        desc="Spawn wofi launcher",
+        "s",
+        lazy.spawn(
+            "sh -c 'grim -g \"$(slurp)\" screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'"
+        ),
     ),
 ]
 

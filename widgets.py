@@ -83,7 +83,7 @@ screens = [
                 ),
                 widget.TextBox(fmt=" "),
                 widget.Clock(
-                    format="%Y-%m-%d %a %H:%M",
+                    format="%b %d %a %H:%M ",
                     fmt=" {}",
                     foreground=foreground,
                 ),

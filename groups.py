@@ -5,7 +5,7 @@ groups = [
     Group("2", spawn=["qutebrowser"], label=""),
     Group(
         "3",
-        label=" ",
+        label="",
     ),
     Group("4", label=""),
     Group(
@@ -13,3 +13,4 @@ groups = [
         label=" ",
     ),
 ]
+
